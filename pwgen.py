@@ -27,9 +27,10 @@ def pwRandom(size, specChar):
 
     return ''.join(arr)
 
-def userName(first, last):
+# add a new parameter 'email' that if true will add '@gmail.com' to the end
+def userName(first, last, email):
     numbers = "1234567890"
-    
+
     arr = []
 
     arr.append(first)
@@ -41,10 +42,13 @@ def userName(first, last):
         arr.append(numbers[ranNum])
         i += 1
 
+    if email == True:
+        arr.append("@gmail.com")
+
     return ''.join(arr)
 
 def main():
-    # print(userName("Khoi", "Pham",))
+    print(userName("Khoi", "Pham", False))
     print(pwRandom(5, False))
     
 if __name__ == '__main__':
